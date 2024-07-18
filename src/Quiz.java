@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
+
 public class Quiz {
     // List to store all the trivia questions
     private List<Question> questions;
@@ -15,12 +16,16 @@ public class Quiz {
 
     private void loadQuestions() {
         // Add questions to the list
-        questions.add(new Question("What is the name of the first boss in Dark Souls?", new String[] {"Asylum Demon", "Bell Gargoyle", "Capra Demon", "Taurus Demon"}, 0, "Easy"));
+        questions.add(new Question("What is the name of the first boss in Dark Souls?",
+                new String[]{"Asylum Demon", "Bell Gargoyle", "Capra Demon", "Taurus Demon"}, 0, "Easy"));
+        questions.add(new Question("What is the name of the first boss in Dark Souls?",
+                new String[]{"Asylum Demon", "Bell Gargoyle", "Capra Demon", "Taurus Demon"}, 0, "Easy"));
+
         questions.add(new Question("Who is the NPC that offers pyromancy training?",
-                new String[] {"Laurentius of the Great Swamp", "Griggs of Vinheim", "Logan the Sorcerer", "Dusk of Oolacile"},
+                new String[]{"Laurentius of the Great Swamp", "Griggs of Vinheim", "Logan the Sorcerer", "Dusk of Oolacile"},
                 0, "Medium"));
         questions.add(new Question("What is the true name of the character known as 'Solaire of Astora'?",
-                new String[] {"Solaire", "Oscar", "Knight of Astora", "Gwyn"},
+                new String[]{"Solaire", "Oscar", "Knight of Astora", "Gwyn"},
                 1, "Hard"));
     }
 
@@ -32,9 +37,10 @@ public class Quiz {
 
         String difficulty = scanner.nextLine();
 
+        // Initialize array of questions
         List<Question> selectedQuestions = new ArrayList<>();
 
-        // Filter questions based on difficulty
+        // Filter questions based on difficulty (Type variable : collection)
         for (Question question : questions) {
             if (question.getDifficulty().equalsIgnoreCase(difficulty)) {
                 selectedQuestions.add(question);
@@ -51,6 +57,12 @@ public class Quiz {
             // Loop through and print each option
             for (int i = 0; i < options.length; i++) {
                 System.out.println((i + 1) + ": " + options[i]);
+            }
+
+            System.out.println("---------------------");
+            int answer = scanner.nextInt();
+            if (answer - 1 == question.getCorrectOptionIndex()) {
+                System.out.println("correct");
             }
         }
     }
