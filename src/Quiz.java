@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class Quiz {
     // List to store all the trivia questions
     private List<Question> questions;
+    int score;
 
     public Quiz() {
         // Initialize the questions list
@@ -32,11 +33,22 @@ public class Quiz {
     public void start() {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("DARK SOULS TRIVIA");
-        System.out.println("Select Difficulty (Easy, Medium, or Hard): ");
+        System.out.println("-----------------------------------DARK SOULS TRIVIA-------------------------------------------------");
+        System.out.println("Welcome Chosen Undead! How much can you remember from your adventures through the Kingdom of Lordran?");
+        System.out.println("-----------------------------------------------------------------------------------------------------");
+        System.out.println("                    Determine a Difficulty (Easy, Medium, or Hard):                   ");
 
         String difficulty = scanner.nextLine();
 
+        System.out.println("      To help you through your journey, take this Estus Flask, it has 3 charges. Don't go hollow!");
+
+        System.out.println("                                         | |");
+        System.out.println("                                        /~~~\\");
+        System.out.println("                                       |     |");
+        System.out.println("                                       |     |");
+        System.out.println("                                        \\___/");
+
+        System.out.println("-----------------------------------------------------------------------------------------------------");
         // Initialize array of questions
         List<Question> selectedQuestions = new ArrayList<>();
 
@@ -62,7 +74,9 @@ public class Quiz {
             System.out.println("---------------------");
             int answer = scanner.nextInt();
             if (answer - 1 == question.getCorrectOptionIndex()) {
-                System.out.println("correct");
+                score += 10;
+                System.out.println("Correct, you gained 10 souls for a total of " + score + " souls.");
+                System.out.println("---------------------");
             }
         }
     }
