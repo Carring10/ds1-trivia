@@ -77,6 +77,9 @@ public class Quiz {
             }
         }
 
+        // Randomize selected questions
+        Collections.shuffle(selectedQuestions);
+
         for (Question question : selectedQuestions) {
             // Print question text
             System.out.println(question.getQuestionText());
