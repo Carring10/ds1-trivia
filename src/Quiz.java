@@ -7,6 +7,7 @@ public class Quiz {
     // List to store all the trivia questions
     private List<Question> questions;
     int score;
+    int lives = 3;
 
     public Quiz() {
         // Initialize the questions list
@@ -19,8 +20,25 @@ public class Quiz {
         // Add questions to the list
         questions.add(new Question("What is the name of the first boss in Dark Souls?",
                 new String[]{"Asylum Demon", "Bell Gargoyle", "Capra Demon", "Taurus Demon"}, 0, "Easy"));
-        questions.add(new Question("What is the name of the first boss in Dark Souls?",
-                new String[]{"Asylum Demon", "Bell Gargoyle", "Capra Demon", "Taurus Demon"}, 0, "Easy"));
+        questions.add(new Question("Who is the main character in Dark Souls 1?",
+                new String[]{"The Chosen Undead", "The Bearer of the Curse", "The Ashen One", "The Unkindled"}, 0, "Easy"));
+        questions.add(new Question("What is the name of the starting area in Dark Souls 1?",
+                new String[]{"Firelink Shrine", "Undead Burg", "Northern Undead Asylum", "Anor Londo"}, 2, "Easy"));
+        questions.add(new Question("What item do you need to ring the first Bell of Awakening?",
+                new String[]{"Master Key", "Drake Sword", "Homeward Bone", "Nothing"}, 3, "Easy"));
+        questions.add(new Question("Who is the blacksmith located in the Undead Parish?",
+                new String[]{"Vamos", "Andre of Astora", "Rickert of Vinheim", "Giant Blacksmith"}, 1, "Easy"));
+        questions.add(new Question("What is the name of the covenant you join by speaking to Kingseeker Frampt?",
+                new String[]{"Warriors of Sunlight", "Darkwraiths", "Path of the Dragon", "Way of White"}, 3, "Easy"));
+        questions.add(new Question("What type of creature is Sif?",
+                new String[]{"Dragon", "Giant", "Wolf", "Demon"}, 2, "Easy"));
+        questions.add(new Question("Which item is used to kindle bonfires beyond the initial level?",
+                new String[]{"Humanity", "Soul of a Hero", "Estus Flask", "Homeward Bone"}, 3, "Easy"));
+        questions.add(new Question("Who is the final boss of Dark Souls 1?",
+                new String[]{"Nito", "Gwyn, Lord of Cinder", "Seath the Scaleless", "Manus, Father of the Abyss"}, 0, "Easy"));
+        questions.add(new Question("What is the name of the hidden area where you can fight the boss Gwyndolin?",
+                new String[]{"The Painted World of Ariamis", "New Londo Ruins", "Darkroot Garden", "The Duke's Archives"}, 0, "Easy"));
+
 
         questions.add(new Question("Who is the NPC that offers pyromancy training?",
                 new String[]{"Laurentius of the Great Swamp", "Griggs of Vinheim", "Logan the Sorcerer", "Dusk of Oolacile"},
@@ -71,12 +89,20 @@ public class Quiz {
                 System.out.println((i + 1) + ": " + options[i]);
             }
 
-            System.out.println("---------------------");
+            System.out.println("----------------------------------------------------------------------------------------------------");
             int answer = scanner.nextInt();
             if (answer - 1 == question.getCorrectOptionIndex()) {
                 score += 10;
-                System.out.println("Correct, you gained 10 souls for a total of " + score + " souls.");
-                System.out.println("---------------------");
+                System.out.println("| Souls: + " + score + " |");
+            } else {
+                lives --;
+                System.out.println("             You take a sip of your Estus Flask, leaving 2 charges remaining.");
+                System.out.println("                                         | |");
+                System.out.println("                                        /   \\");
+                System.out.println("                                       |~~~~~|");
+                System.out.println("                                       |     |");
+                System.out.println("                                        \\___/");
+                System.out.println("----------------------------------------------------------------------------------------------------");
             }
         }
     }
