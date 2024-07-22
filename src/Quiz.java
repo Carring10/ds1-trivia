@@ -94,7 +94,8 @@ public class Quiz {
             if (answer - 1 == question.getCorrectOptionIndex()) {
                 score += 10;
                 System.out.println("| Souls: + " + score + " |");
-            } else {
+            }
+            if (answer - 1 != question.getCorrectOptionIndex() && lives == 3) {
                 lives --;
                 System.out.println("             You take a sip of your Estus Flask, leaving 2 charges remaining.");
                 System.out.println("                                         | |");
@@ -103,6 +104,30 @@ public class Quiz {
                 System.out.println("                                       |     |");
                 System.out.println("                                        \\___/");
                 System.out.println("----------------------------------------------------------------------------------------------------");
+
+            } else if (answer - 1 != question.getCorrectOptionIndex() && lives == 2) {
+                lives --;
+                System.out.println("             You take a sip of your Estus Flask, leaving 1 charge remaining.");
+                System.out.println("                                         | |");
+                System.out.println("                                        /   \\");
+                System.out.println("                                       |     |");
+                System.out.println("                                       |~~~~~|");
+                System.out.println("                                        \\___/");
+                System.out.println("----------------------------------------------------------------------------------------------------");
+            } else if (answer - 1 != question.getCorrectOptionIndex() && lives == 1) {
+                lives --;
+                System.out.println("             You take a sip of your Estus Flask, leaving 0 charges remaining.");
+                System.out.println("                                         | |");
+                System.out.println("                                        /   \\");
+                System.out.println("                                       |     |");
+                System.out.println("                                       |     |");
+                System.out.println("                                        \\___/");
+                System.out.println("----------------------------------------------------------------------------------------------------");
+            } else if (answer - 1 != question.getCorrectOptionIndex() && lives == 0) {
+                System.out.println("----------------------------------------------------------------------------------------------------");
+                System.out.println("                                               YOU DIED");
+                System.out.println("----------------------------------------------------------------------------------------------------");
+                break;
             }
         }
     }
