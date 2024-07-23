@@ -18,4 +18,4 @@ To add a touch of Dark Souls authenticity, the quiz incorporates an **Estus Flas
 2. **Answer Questions**: Each difficulty has 10 questions. Select the correct answer from the options provided.
 3. **Use Your Estus Flask**: You have three chances to get a question wrong. Use them wisely!
 
-![ds1-trivia-screenshot.png](..%2F..%2FPictures%2Fds1-trivia-screenshot.png)
+![ds1-trivia-screenshot.png](C:\Users\carri\Pictures\ds1-trivia-screenshot.png)
