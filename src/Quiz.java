@@ -58,6 +58,11 @@ public class Quiz {
 
         String difficulty = scanner.nextLine();
 
+        while (!difficulty.equalsIgnoreCase("easy") && !difficulty.equalsIgnoreCase("medium") && !difficulty.equalsIgnoreCase("hard")) {
+            System.out.println("Enter a valid response: Easy, Medium, or Hard");
+            difficulty = scanner.nextLine();
+        }
+
         System.out.println("      To help you through your journey, take this Estus Flask, it has 3 charges. Don't go hollow!");
 
         System.out.println("                                         | |");
